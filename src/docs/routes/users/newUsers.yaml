@@ -1,0 +1,19 @@
+paths:
+  /users:
+    post:
+      summary: Creates a new usuario
+      tags:
+        - Users
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/User'
+      responses:
+        "200":
+          description: The user was created.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/User'

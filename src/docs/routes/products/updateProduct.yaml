@@ -1,0 +1,27 @@
+paths:
+  /api/products/{id}:
+    put:
+      summary: Updates a product
+      tags:
+        - Products
+      parameters:
+      - name: 647fa8c9e46dbc5a20320181
+        in: path
+        description: id of the product to update.
+        required: true
+        type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Products'
+      responses:
+        "200":
+          description: The updated product.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Products'
+        "404":
+          description: Product not found Error
